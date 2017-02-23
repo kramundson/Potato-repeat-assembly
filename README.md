@@ -5,8 +5,7 @@ Document created 22 Feb 2017
 The goal of this analysis is to identify high-copy kmers that will be used to assemble consensus repeats of tetraploid potato.
 See Koch et al (2014) doi: https://doi.org/10.1093/nar/gku210 for reference on repeat assembly from NGS reads.
 
-###Dataset: Tetraploid potato clones Atlantic and Superior were sequenced by the Buell lab (Michigan State University) and retrieved from EMBL ENA. Libraries were randomly sheared
-and sequenced on an Illumina HiSeq 2500. Other details of library prep are not available from ENA metadata.
+###Dataset: Tetraploid potato clones Atlantic and Superior were sequenced by the Buell lab (Michigan State University) and retrieved from EMBL ENA. Libraries were randomly sheared and sequenced on an Illumina HiSeq 2500. Other details of library prep are not available from ENA metadata.
 
 Diploid potato clones IVP-101 and PL-4 were sequenced by the Comai lab 150PE Illumina HiSeq 4000. Libraries made with random shearing to avg 350bp with Covaris E220,
 library prep done with KAPA Hyper prep (4 cycles of library amplification) using half-scale reactions for all steps except library amplification.
