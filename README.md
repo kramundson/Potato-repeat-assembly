@@ -161,16 +161,16 @@ Superior
 [logo7]: https://github.com/kramundson/Potato-repeat-detection/images/superior15.png "Superior 15mer counts"
 
 AlcaTarma
-```jellyfish count KA1.fq -m 15 -s 100M -t 4 -L 2 -o AlcaTarma-15mer-count.jf``` # running
-```jellyfish histo AlcaTarma-15mer-count.jf > histo-PL4-15mer.txt```
+```jellyfish count KA1.fq -m 15 -s 100M -t 4 -L 2 -o AlcaTarma-15mer-count.jf```
+```jellyfish histo AlcaTarma-15mer-count.jf > histo-AlcaTarma-15mer.txt```
 
 ![alt text][logo8]
 
 [logo8]: https://github.com/kramundson/Potato-repeat-detection/images/alcatarma15.png "Alca Tarma 15mer counts"
 
 IVP-101
-```jellyfish count IVP-101.fq -m 15 -s 100M -t 4 -L 2 -o IVP101-15mer-count.jf``` # running
-```jellyfish histo IVP101-15mer-count.jf > histo-IVP-101-30mer.txt```
+```jellyfish count IVP-101.fq -m 15 -s 100M -t 4 -L 2 -o IVP101-15mer-count.jf```
+```jellyfish histo IVP101-15mer-count.jf > histo-IVP101-15mer.txt```
 
 ![alt text][logo9]
 

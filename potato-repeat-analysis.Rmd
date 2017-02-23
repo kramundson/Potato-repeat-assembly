@@ -109,15 +109,42 @@ ggplotly(plot.superior.15)
 
 Pooled Alca Tarma reads, all 15-mers
 ```{r}
-
+alcatarma.15 <- read.csv("histo-AlcaTarma-15mer.txt",header = F, sep = " ")
+colnames(alcatarma.15) <- c("kmer.occurrence","occurrence.count")
+plot.alcatarma.15 <- ggplot(alcatarma.15, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(x = "15-mer count in reads", y = "count of count") +
+  xlim(4,150)
+  #geom_smooth(se = FALSE, color = "orange")
+#plot.superior.15
+ggplotly(plot.alcatarma.15)
+#ggsave("alcatarma15.png",plot=plot.alcatarma.15)
 ```
 
-Pooled PL-4 reads, all 15-mers
+PL-4 reads, all 15-mers
 ```{r}
-
+pl4.15 <- read.csv("histo-PL4-15mer.txt",header = F, sep = " ")
+colnames(pl4.15) <- c("kmer.occurrence","occurrence.count")
+plot.pl4.15 <- ggplot(pl4.15, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(x = "15-mer count in reads", y = "count of count") +
+  xlim(7,150)
+  #geom_smooth(se = FALSE, color = "orange")
+#plot.superior.15
+ggplotly(plot.pl4.15)
+#ggsave("pl415.png",plot=plot.pl4.15)
 ```
 
 Pooled IVP-101 reads, all 15-mers
 ```{r}
-
+ivp101.15 <- read.csv("histo-IVP101-15mer.txt",header = F, sep = " ")
+colnames(ivp101.15) <- c("kmer.occurrence","occurrence.count")
+plot.ivp101.15 <- ggplot(ivp101.15, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(x = "15-mer count in reads", y = "count of count") +
+  xlim(7,150)
+  #geom_smooth(se = FALSE, color = "orange")
+#plot.superior.15
+ggplotly(plot.ivp101.15)
+ggsave("ivp10115.png",plot=plot.ivp101.15)
 ```
