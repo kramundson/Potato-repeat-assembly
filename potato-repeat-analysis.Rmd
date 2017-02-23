@@ -1,0 +1,123 @@
+---
+title: "Repeat Detection in Tetraploid and Diploid Potato"
+author: "Kirk Amundson"
+output: html_notebook
+---
+
+```{r}
+library(ggplot2)
+library(plotly)
+```
+
+Pooled Atlantic reads, all 30-mers
+```{r}
+atlantic.30 <- read.csv("histo-atlantic-pooled-30mer.txt",header = F, sep = " ")
+colnames(atlantic.30) <- c("kmer.occurrence","occurrence.count")
+plot.atlantic.30 <- ggplot(atlantic.30, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(title = "4x Atlantic reads 30-mer distribution: 544 Million PE100 reads",
+       x = "30-mer count in reads", y = "count of counts") +
+  xlim(2,75)
+#plot.atlantic.30
+#ggsave("atlantic30.png", plot = plot.atlantic.30)
+ggplotly(plot.atlantic.30)
+```
+
+Pooled Superior reads, all 30-mers
+```{r}
+superior.30 <- read.csv("histo-superior-pooled-30mer.txt",header = F, sep = " ")
+colnames(superior.30) <- c("kmer.occurrence","occurrence.count")
+plot.superior.30 <- ggplot(superior.30, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(title = "4x Superior reads 30-mer distribution",
+       x = "30-mer count in reads", y = "count of counts") +
+  xlim(2,40)
+#plot.superior.30
+#ggsave("superior30.png",plot = plot.superior.30)
+ggplotly(plot.superior.30)
+```
+
+Pooled Alca Tarma reads, all 30-mers
+```{r}
+alcatarma.30 <- read.csv("histo-AlcaTarma-30mer.txt", header = F, sep = " ")
+colnames(alcatarma.30) <- c("kmer.occurrence","occurrence.count")
+plot.alcatarma.30 <- ggplot(alcatarma.30, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(x = "30-mer count in reads", y = "count of count") +
+  xlim(2,50)
+  #geom_smooth(se=F,color="orange")
+ggplotly(plot.alcatarma.30)
+#ggsave("alcatarma30.png",plot=plot.alcatarma.30)
+```
+
+Pooled PL-4 reads, all 30-mers
+```{r}
+pl4.30 <- read.csv("histo-PL4-30mer.txt", header = F, sep = " ")
+colnames(pl4.30) <- c("kmer.occurrence","occurrence.count")
+plot.pl4.30 <- ggplot(pl4.30, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(x = "30-mer count in reads", y = "count of count") +
+  xlim(3,50)
+  #geom_smooth(se=F,color="orange")
+ggplotly(plot.pl4.30)
+#ggsave("pl430.png",plot=plot.pl4.30)
+```
+
+Pooled IVP-101 reads, all 30-mers
+```{r}
+IVP101.30 <- read.csv("histo-IVP101-30mer.txt",header = F, sep = " ")
+colnames(IVP101.30) <- c("kmer.occurrence","occurrence.count")
+plot.IVP101.30 <- ggplot(IVP101.30, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(x = "30-mer count in reads", y = "count of count") +
+  xlim(3,50)
+  #geom_smooth(se = FALSE, color = "orange")
+#plot.atlantic.15
+ggplotly(plot.IVP101.30)
+#ggsave("IVP10130.png",plot=plot.IVP101.30)
+```
+
+Pooled Atlantic reads, all 15mers
+```{r}
+atlantic.15 <- read.csv("histo-atlantic-pooled-15mer.txt",header = F, sep = " ")
+colnames(atlantic.15) <- c("kmer.occurrence","occurrence.count")
+plot.atlantic.15 <- ggplot(atlantic.15, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(title = "4x Atlantic reads 15-mer distribution: 544 Million PE100 reads",
+       x = "15-mer count in reads", y = "count of count") +
+  xlim(10,250)
+  #geom_smooth(se = FALSE, color = "orange")
+#plot.atlantic.15
+ggplotly(plot.atlantic.15)
+#ggsave("atlantic15.png",plot=plot.atlantic.15)
+```
+
+Pooled Superior reads, all 15-mers
+```{r}
+superior.15 <- read.csv("histo-superior-pooled-15mer.txt",header = F, sep = " ")
+colnames(superior.15) <- c("kmer.occurrence","occurrence.count")
+plot.superior.15 <- ggplot(superior.15, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(title = "4x Superior reads 15-mer distribution",
+       x = "15-mer count in reads", y = "count of count") +
+  xlim(5,250)
+  #geom_smooth(se = FALSE, color = "orange")
+#plot.superior.15
+ggplotly(plot.superior.15)
+#ggsave("superior15.png",plot=plot.superior.15)
+```
+
+Pooled Alca Tarma reads, all 15-mers
+```{r}
+
+```
+
+Pooled PL-4 reads, all 15-mers
+```{r}
+
+```
+
+Pooled IVP-101 reads, all 15-mers
+```{r}
+
+```
