@@ -155,7 +155,7 @@ jellyfish count atlantic-pooled.fastq -m 15 -s 100M -t 4 -L 2 -o atlantic-pooled
 jellyfish histo atlantic-pooled-15mer-count.jf > histo-atlantic-pooled-15mer.txt
 ```
 
-![alt text][logo6](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/atlantic15.png "Atlantic 15mer counts")
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/atlantic15.png "Atlantic 15mer counts")
 
 Superior
 
@@ -180,7 +180,7 @@ jellyfish count IVP-101.fq -m 15 -s 100M -t 4 -L 2 -o IVP101-15mer-count.jf
 jellyfish histo IVP101-15mer-count.jf > histo-IVP101-15mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP10115.png
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/ivp10115.png "IVP-101 15mer counts")
 
 PL-4
 ```
