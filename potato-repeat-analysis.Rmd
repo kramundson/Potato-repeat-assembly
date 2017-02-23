@@ -57,8 +57,8 @@ colnames(pl4.30) <- c("kmer.occurrence","occurrence.count")
 plot.pl4.30 <- ggplot(pl4.30, aes(x=kmer.occurrence,y=occurrence.count)) +
   geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
   labs(x = "30-mer count in reads", y = "count of count") +
-  xlim(3,50)
-  #geom_smooth(se=F,color="orange")
+  xlim(3,70) +
+  geom_smooth(se=F,color="orange")
 ggplotly(plot.pl4.30)
 #ggsave("pl430.png",plot=plot.pl4.30)
 ```
@@ -76,6 +76,20 @@ plot.IVP101.30 <- ggplot(IVP101.30, aes(x=kmer.occurrence,y=occurrence.count)) +
 ggplotly(plot.IVP101.30)
 #ggsave("IVP10130.png",plot=plot.IVP101.30)
 ```
+
+IVP-35, all 30-mers
+
+```{r}
+IVP35.30 <- read.csv("histo-IVP35-30mer.txt",header =F, sep = " ")
+colnames(IVP35.30) <- c("kmer.occurrence","occurrence.count")
+plot.IVP35.30 <- ggplot(IVP35.30, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(x = "15-mer count in reads", y = "count of count") +
+  xlim(3,50)
+ggplotly(plot.IVP35.30)
+ggsave("IVP3530.png",plot=plot.IVP35.30)
+```
+
 
 Pooled Atlantic reads, all 15mers
 ```{r}
@@ -133,9 +147,11 @@ plot.pl4.15 <- ggplot(pl4.15, aes(x=kmer.occurrence,y=occurrence.count)) +
 #plot.superior.15
 ggplotly(plot.pl4.15)
 #ggsave("pl415.png",plot=plot.pl4.15)
+
+#7618650/2216053 # 3.437937-fold change in k-mer abundance for homozygous and heterozygous peaks
 ```
 
-Pooled IVP-101 reads, all 15-mers
+IVP-101 reads, all 15-mers
 ```{r}
 ivp101.15 <- read.csv("histo-IVP101-15mer.txt",header = F, sep = " ")
 colnames(ivp101.15) <- c("kmer.occurrence","occurrence.count")
@@ -147,4 +163,21 @@ plot.ivp101.15 <- ggplot(ivp101.15, aes(x=kmer.occurrence,y=occurrence.count)) +
 #plot.superior.15
 ggplotly(plot.ivp101.15)
 ggsave("ivp10115.png",plot=plot.ivp101.15)
+
+#8721034/2850462 # 3.059516-fold difference between homozygous and heterozygous peaks
 ```
+
+IVP-35, all 15mers
+```{r}
+ivp35.15 <- read.csv("histo-IVP35-15mer.txt",header = F, sep = " ")
+colnames(ivp35.15) <- c("kmer.occurrence","occurrence.count")
+plot.ivp35.15 <- ggplot(ivp35.15, aes(x=kmer.occurrence,y=occurrence.count)) +
+  geom_bar(stat="identity", fill = "blue", alpha = 0.5) +
+  labs(x = "15-mer count in reads", y = "count of count") +
+  xlim(7,150)
+  #geom_smooth(se = FALSE, color = "orange")
+#plot.superior.15
+ggplotly(plot.ivp35.15)
+ggsave("ivp3515.png",plot=plot.ivp35.15)
+```
+

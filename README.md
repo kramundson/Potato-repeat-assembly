@@ -145,6 +145,17 @@ jellyfish histo IVP101-30mer-count.jf > histo-IVP101-30mer.txt
 
 ![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP10130.png "IVP-101 30mer counts")
 
+IVP-35:
+
+```
+ln -s ~/Potato_snp/170203_J00113_0227_BHFWLYBBXX_run413_2017-02-03_H821P_Amundson/demultiplex-only/IVP-35.fq ./
+jellyfish count IVP-35.fq -m 30 -s 100M -t 5 -L 2 -o IVP35-30mer-count.jf
+jellyfish histo IVP35-30mer-count.jf > histo-IVP35-30mer.txt
+```
+# todo: make plots in R and mv image to ./images
+
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP3530.png "IVP-35 30mer counts")
+
 ##6. Compare histograms above with k=15 (isner)
 
 Atlantic
@@ -188,6 +199,14 @@ jellyfish histo PL4-15mer-count.jf > histo-PL4-15mer.txt
 ```
 
 ![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/pl415.png)
+
+IVP-35
+```
+jellyfish count IVP-35.fq -m 15 -s 100M -t 5 -L 2 -o IVP35-15mer-count.jf
+jellyfish histo IVP35-15mer-count.jf > histo-IVP35-15mer.txt
+```
+
+![alt text]https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP3515.png "IVP-35 15mer counts")
 
 Looks like filtering at 30nt will provide a cleaner set of high-copy kmers. Based on the high-coverage Atlantic data, I expect the homozygote peak to be dispersed.
 
