@@ -50,12 +50,14 @@ Files match, we can proceed.
 
 Get read length for each file:
 
-```interleaveSwitcher-2.py -f SRR2069940_1.fastq -r SRR2069940_2.fastq -o SRR2069940.fastq
+```
+interleaveSwitcher-2.py -f SRR2069940_1.fastq -r SRR2069940_2.fastq -o SRR2069940.fastq 
 interleaveSwitcher-2.py -f SRR2070067_1.fastq -r SRR2070067_2.fastq -o SRR2070067.fastq
 interleaveSwitcher-2.py -f SRR2070065_1.fastq -r SRR2070065_2.fastq -o SRR2070065.fastq
 interleaveSwitcher-2.py -f SRR2070063_1.fastq -r SRR2070063_2.fastq -o SRR2070063.fastq
 interleaveSwitcher-2.py -f SRR2069942_1.fastq -r SRR2069942_2.fastq -o SRR2069942.fastq
-interleaveSwitcher-2.py -f SRR2069941_1.fastq -r SRR2069941_2.fastq -o SRR2069941.fastq```
+interleaveSwitcher-2.py -f SRR2069941_1.fastq -r SRR2069941_2.fastq -o SRR2069941.fastq
+```
 
 Get read length for each interleaved file
 
@@ -84,27 +86,32 @@ Atlantic:
 
 ##4. Tidy up working directory (isner)
 
-```mkdir download_metadata WGS_interleaved_unpooled WGS_uninterleaved_unpooled WGS_pooled
+```
+mkdir download_metadata WGS_interleaved_unpooled WGS_uninterleaved_unpooled WGS_pooled
 mv wget_log md5sum_batch_tetraploid_wget.txt download_metadata/
-mv SRR2069940_2.fastq SRR2069941_2.fastq SRR2069942_2.fastq SRR2070063_2.fastq SRR2070065_2.fastq SRR2070067_2.fastq \
- SRR2069940_1.fastq SRR2069941_1.fastq SRR2069942_1.fastq SRR2070063_1.fastq SRR2070065_1.fastq SRR2070067_1.fastq WGS_uninterleaved_unpooled/
+mv SRR2069940_2.fastq SRR2069941_2.fastq SRR2069942_2.fastq SRR2070063_2.fastq SRR2070065_2.fastq SRR2070067_2.fastq SRR2069940_1.fastq SRR2069941_1.fastq SRR2069942_1.fastq SRR2070063_1.fastq SRR2070065_1.fastq SRR2070067_1.fastq WGS_uninterleaved_unpooled/
 gzip WGS_uninterleaved_unpooled/*.fastq
 mv SRR*.fastq WGS_interleaved_unpooled
-mv atlantic-pooled.fastq  superior-pooled.fastq WGS_pooled```
+mv atlantic-pooled.fastq  superior-pooled.fastq WGS_pooled
+```
 
 ##5. Extract 30-mers from pooled with Jellyfish (definitely isner)
 
 ```module load jellyfish/2.2.3/```
 
-```jellyfish count atlantic-pooled.fastq -m 30 -s 100M -t 10 -L 2 -o atlantic-pooled-30mer-count.jf
-jellyfish histo atlantic-pooled-30mer-count.jf > histo-atlantic-pooled-30mer.txt```
+```
+jellyfish count atlantic-pooled.fastq -m 30 -s 100M -t 10 -L 2 -o atlantic-pooled-30mer-count.jf
+jellyfish histo atlantic-pooled-30mer-count.jf > histo-atlantic-pooled-30mer.txt
+```
 
 ![alt text][logo]
 
 [logo]: https://github.com/kramundson/Potato-repeat-detection/images/atlantic30.png "Atlantic 30mer counts"
 
-```jellyfish count superior-pooled.fastq -m 30 -s 100M -t 10 -L 2 -o superior-pooled-30mer-count.jf
-jellyfish histo superior-pooled-30mer-count.jf > histo-superior-pooled-30mer.txt```
+```
+jellyfish count superior-pooled.fastq -m 30 -s 100M -t 10 -L 2 -o superior-pooled-30mer-count.jf
+jellyfish histo superior-pooled-30mer-count.jf > histo-superior-pooled-30mer.txt
+```
 
 ![alt text][logo2]
 
@@ -113,29 +120,37 @@ jellyfish histo superior-pooled-30mer-count.jf > histo-superior-pooled-30mer.txt
 As a comparison, do for 150PE reads of two haploid inducers, PL-4 and IVP-101, as well as another tetraploid, AlcaTarma.
 This data was generated in-house and is described in the README.md file in the same path as each read file
 
-```ln -s /cato2pool/backup-share/kramundson/Potato_snp/data/161014_J00113_0191_AHFWKKBBXX_run377_2016-10-14_KA_1_2/demultiplex-only/KA2.fq ./
+```
+ln -s /cato2pool/backup-share/kramundson/Potato_snp/data/161014_J00113_0191_AHFWKKBBXX_run377_2016-10-14_KA_1_2/demultiplex-only/KA2.fq ./
 ln -s /cato2pool/backup-share/kramundson/Potato_snp/data/161014_J00113_0191_AHFWKKBBXX_run377_2016-10-14_KA_1_2/demultiplex-only/KA1.fq ./
-ln -s /home/kramundson/Potato_snp/170203_J00113_0227_BHFWLYBBXX_run413_2017-02-03_H821P_Amundson/demultiplex-only/IVP-101.fq ./```
+ln -s /home/kramundson/Potato_snp/170203_J00113_0227_BHFWLYBBXX_run413_2017-02-03_H821P_Amundson/demultiplex-only/IVP-101.fq ./
+```
 
 AlcaTarma:
-```jellyfish count KA1.fq -m 30 -s 100M -t 4 -L 2 -o AlcaTarma-30mer-count.jf
-jellyfish histo AlcaTarma-30mer-count.jf > histo-AlcaTarma-30mer.txt```
+```
+jellyfish count KA1.fq -m 30 -s 100M -t 4 -L 2 -o AlcaTarma-30mer-count.jf
+jellyfish histo AlcaTarma-30mer-count.jf > histo-AlcaTarma-30mer.txt
+```
 
 ![alt text][logo3]
 
 [logo3]: https://github.com/kramundson/Potato-repeat-detection/images/alcatarma30.png "AlcaTarma 30mer counts"
 
 PL-4:
-```jellyfish count KA2.fq -m 30 -s 100M -t 4 -L 2 -o PL4-30mer-count.jf
-jellyfish histo PL4-30mer-count.jf > histo-PL4-30mer.txt```
+```
+jellyfish count KA2.fq -m 30 -s 100M -t 4 -L 2 -o PL4-30mer-count.jf
+jellyfish histo PL4-30mer-count.jf > histo-PL4-30mer.txt
+```
 
 ![alt text][logo4]
 
 [logo4]: https://github.com/kramundson/Potato-repeat-detection/images/pl430.png "PL-4 30mer counts"
 
 IVP-101:
-```jellyfish count IVP-101.fq -m 30 -s 100M -t 4 -L 2 -o IVP101-30mer-count.jf
-jellyfish histo IVP101-30mer-count.jf > histo-IVP101-30mer.txt```
+```
+jellyfish count IVP-101.fq -m 30 -s 100M -t 4 -L 2 -o IVP101-30mer-count.jf
+jellyfish histo IVP101-30mer-count.jf > histo-IVP101-30mer.txt
+```
 
 ![alt text][logo5]
 [logo5]: https://github.com/kramundson/Potato-repeat-detection/images/IVP10130.png "IVP-101 30mer counts"
@@ -144,8 +159,10 @@ jellyfish histo IVP101-30mer-count.jf > histo-IVP101-30mer.txt```
 
 Atlantic
 
-```jellyfish count atlantic-pooled.fastq -m 15 -s 100M -t 4 -L 2 -o atlantic-pooled-15mer-count.jf
-jellyfish histo atlantic-pooled-15mer-count.jf > histo-atlantic-pooled-15mer.txt```
+```
+jellyfish count atlantic-pooled.fastq -m 15 -s 100M -t 4 -L 2 -o atlantic-pooled-15mer-count.jf
+jellyfish histo atlantic-pooled-15mer-count.jf > histo-atlantic-pooled-15mer.txt
+```
 
 ![alt text][logo6]
 
@@ -153,32 +170,40 @@ jellyfish histo atlantic-pooled-15mer-count.jf > histo-atlantic-pooled-15mer.txt
 
 Superior
 
-```jellyfish count atlantic-pooled.fastq -m 15 -s 100M -t 4 -L 2 -o superior-pooled-15mer-count.jf
-jellyfish histo superior-pooled-15mer-count.jf > histo-superior-pooled-15mer.txt```
+```
+jellyfish count atlantic-pooled.fastq -m 15 -s 100M -t 4 -L 2 -o superior-pooled-15mer-count.jf
+jellyfish histo superior-pooled-15mer-count.jf > histo-superior-pooled-15mer.txt
+```
 
 ![alt text][logo7]
 
 [logo7]: https://github.com/kramundson/Potato-repeat-detection/images/superior15.png "Superior 15mer counts"
 
 AlcaTarma
-```jellyfish count KA1.fq -m 15 -s 100M -t 4 -L 2 -o AlcaTarma-15mer-count.jf
-jellyfish histo AlcaTarma-15mer-count.jf > histo-AlcaTarma-15mer.txt```
+```
+jellyfish count KA1.fq -m 15 -s 100M -t 4 -L 2 -o AlcaTarma-15mer-count.jf
+jellyfish histo AlcaTarma-15mer-count.jf > histo-AlcaTarma-15mer.txt
+```
 
 ![alt text][logo8]
 
 [logo8]: https://github.com/kramundson/Potato-repeat-detection/images/alcatarma15.png "Alca Tarma 15mer counts"
 
 IVP-101
-```jellyfish count IVP-101.fq -m 15 -s 100M -t 4 -L 2 -o IVP101-15mer-count.jf
-jellyfish histo IVP101-15mer-count.jf > histo-IVP101-15mer.txt```
+```
+jellyfish count IVP-101.fq -m 15 -s 100M -t 4 -L 2 -o IVP101-15mer-count.jf
+jellyfish histo IVP101-15mer-count.jf > histo-IVP101-15mer.txt
+```
 
 ![alt text][logo9]
 
 [logo9]: https://github.com/kramundson/Potato-repeat-detection/images/IVP10115.png
 
 PL-4
-```jellyfish count KA2.fq -m 15 -s 100M -t 4 -L 2 -o PL4-15mer-count.jf
-jellyfish histo PL4-15mer-count.jf > histo-PL4-15mer.txt```
+```
+jellyfish count KA2.fq -m 15 -s 100M -t 4 -L 2 -o PL4-15mer-count.jf
+jellyfish histo PL4-15mer-count.jf > histo-PL4-15mer.txt
+```
 
 ![alt text][logo10]
 
