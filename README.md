@@ -180,7 +180,7 @@ jellyfish count IVP-101.fq -m 15 -s 100M -t 4 -L 2 -o IVP101-15mer-count.jf
 jellyfish histo IVP101-15mer-count.jf > histo-IVP101-15mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP10115.png)
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP10115.png
 
 PL-4
 ```
