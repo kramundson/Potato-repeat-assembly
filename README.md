@@ -205,7 +205,7 @@ jellyfish count IVP-35.fq -m 15 -s 100M -t 5 -L 2 -o IVP35-15mer-count.jf
 jellyfish histo IVP35-15mer-count.jf > histo-IVP35-15mer.txt
 ```
 
-![alt text]https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP3515.png "IVP-35 15mer counts")
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP3515.png "IVP-35 15mer counts")
 
 Looks like filtering at 30nt will provide a cleaner set of high-copy kmers. Based on the high-coverage Atlantic data, I expect the homozygote peak to be dispersed.
 
