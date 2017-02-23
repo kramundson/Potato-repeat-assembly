@@ -104,14 +104,14 @@ jellyfish count atlantic-pooled.fastq -m 30 -s 100M -t 10 -L 2 -o atlantic-poole
 jellyfish histo atlantic-pooled-30mer-count.jf > histo-atlantic-pooled-30mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/images/atlantic30.png "Atlantic 30mer counts")
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/atlantic30.png "Atlantic 30mer counts")
 
 ```
 jellyfish count superior-pooled.fastq -m 30 -s 100M -t 10 -L 2 -o superior-pooled-30mer-count.jf
 jellyfish histo superior-pooled-30mer-count.jf > histo-superior-pooled-30mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/images/superior30.png "Superior 30mer counts")
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/superior30.png "Superior 30mer counts")
 
 As a comparison, do for 150PE reads of two haploid inducers, PL-4 and IVP-101, as well as another tetraploid, AlcaTarma.
 This data was generated in-house and is described in the README.md file in the same path as each read file
@@ -128,7 +128,7 @@ jellyfish count KA1.fq -m 30 -s 100M -t 4 -L 2 -o AlcaTarma-30mer-count.jf
 jellyfish histo AlcaTarma-30mer-count.jf > histo-AlcaTarma-30mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/images/alcatarma30.png "AlcaTarma 30mer counts")
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/alcatarma30.png "AlcaTarma 30mer counts")
 
 PL-4:
 ```
@@ -136,7 +136,7 @@ jellyfish count KA2.fq -m 30 -s 100M -t 4 -L 2 -o PL4-30mer-count.jf
 jellyfish histo PL4-30mer-count.jf > histo-PL4-30mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/images/pl430.png "PL-4 30mer counts")
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/pl430.png "PL-4 30mer counts")
 
 IVP-101:
 ```
@@ -144,7 +144,7 @@ jellyfish count IVP-101.fq -m 30 -s 100M -t 4 -L 2 -o IVP101-30mer-count.jf
 jellyfish histo IVP101-30mer-count.jf > histo-IVP101-30mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/images/IVP10130.png "IVP-101 30mer counts")
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP10130.png "IVP-101 30mer counts")
 
 ##6. Compare histograms above with k=15 (isner)
 
@@ -155,7 +155,7 @@ jellyfish count atlantic-pooled.fastq -m 15 -s 100M -t 4 -L 2 -o atlantic-pooled
 jellyfish histo atlantic-pooled-15mer-count.jf > histo-atlantic-pooled-15mer.txt
 ```
 
-![alt text][logo6](https://github.com/kramundson/Potato-repeat-assembly/images/atlantic15.png "Atlantic 15mer counts")
+![alt text][logo6](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/atlantic15.png "Atlantic 15mer counts")
 
 Superior
 
@@ -164,7 +164,7 @@ jellyfish count atlantic-pooled.fastq -m 15 -s 100M -t 4 -L 2 -o superior-pooled
 jellyfish histo superior-pooled-15mer-count.jf > histo-superior-pooled-15mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/images/superior15.png "Superior 15mer counts")
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/superior15.png "Superior 15mer counts")
 
 AlcaTarma
 ```
@@ -172,7 +172,7 @@ jellyfish count KA1.fq -m 15 -s 100M -t 4 -L 2 -o AlcaTarma-15mer-count.jf
 jellyfish histo AlcaTarma-15mer-count.jf > histo-AlcaTarma-15mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/images/alcatarma15.png "Alca Tarma 15mer counts")
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/alcatarma15.png "Alca Tarma 15mer counts")
 
 IVP-101
 ```
@@ -180,7 +180,7 @@ jellyfish count IVP-101.fq -m 15 -s 100M -t 4 -L 2 -o IVP101-15mer-count.jf
 jellyfish histo IVP101-15mer-count.jf > histo-IVP101-15mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/images/IVP10115.png)
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP10115.png)
 
 PL-4
 ```
@@ -188,7 +188,7 @@ jellyfish count KA2.fq -m 15 -s 100M -t 4 -L 2 -o PL4-15mer-count.jf
 jellyfish histo PL4-15mer-count.jf > histo-PL4-15mer.txt
 ```
 
-![alt text](https://github.com/kramundson/Potato-repeat-assembly/images/pl415.png)
+![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/pl415.png)
 
 Looks like filtering at 30nt will provide a cleaner set of high-copy kmers. Based on the high-coverage Atlantic data, I expect the homozygote peak to be dispersed.
 
