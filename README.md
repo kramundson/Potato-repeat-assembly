@@ -152,7 +152,6 @@ ln -s ~/Potato_snp/170203_J00113_0227_BHFWLYBBXX_run413_2017-02-03_H821P_Amundso
 jellyfish count IVP-35.fq -m 30 -s 100M -t 5 -L 2 -o IVP35-30mer-count.jf
 jellyfish histo IVP35-30mer-count.jf > histo-IVP35-30mer.txt
 ```
-# todo: make plots in R and mv image to ./images
 
 ![alt text](https://github.com/kramundson/Potato-repeat-assembly/blob/master/images/IVP3530.png "IVP-35 30mer counts")
 
